@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Customers from '../views/Customers';
 import Categories from '../views/Categories';
 import Paymodes from '../views/Paymodes';
+import Products from '../views/Products';
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/paymodes',
     name: 'Paymodes',
     component: Paymodes
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: Products
   },
   {
     path: '/about',

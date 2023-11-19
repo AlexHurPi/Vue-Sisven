@@ -1,5 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+
+import EditarCategory from ' ../components/categories/EditarCategory.vue';
+import NewCategory from ' ../components/categories/NewCategory.vue';
 import Customers from '../views/Customers';
 import Categories from '../views/Categories';
 import Paymodes from '../views/Paymodes';
@@ -20,6 +23,16 @@ const routes = [
     path: '/categories',
     name: 'Categories',
     component: Categories
+  },
+  {
+    panth: '/editar-category/:id',
+    name: 'EditarCategory',
+    component: EditarCategory
+  },
+  {
+    panth: '/add-category/:id',
+    name: 'NewCategory',
+    component: NewCategory
   },
   {
     path: '/paymodes',

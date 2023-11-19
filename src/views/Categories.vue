@@ -36,21 +36,47 @@
         </table>
         </div>   
     </template>
-    <script>
+<script>
     import axios from 'axios'
-    
-    export default {
-    
-        name: 'Category',
-        data(){
-            return{
-               categories: []
-            }
-        },
-        mounted() {
-            axios
-                .get('http://127.0.0.1:8000/api/categories')
-                .then(response => (this.categories = response.data.categories))
-        },
-    }
-    </script>
+    import Swal from 'sweetalert2'
+
+export default {
+
+    name: 'Category',
+    data(){
+        return{
+            categories: []
+        }
+   },
+   methods: {
+       deleteCategory(codigo){
+           Swal.fire({
+              title: `Do you want to delete the Category with id ${id}?`,
+              showCancelButton: true,
+              confirmButtonText: 'Delete',
+              }).then((result) => {
+              /* Read more about isConfirmed, isDenied below */
+              if (result.isConfirmed) {
+                 //Swal.fire('Saved!', '', 'success')
+                 axios.delete(`http://127.0.0.1:8000/api/categories/${id}`)
+                 .then(response => {
+                     if (response.data.success){
+                        Swal.fire('Deleted!! ', '', 'success')
+                        this.categories = response.data.categories
+                     }
+                 })
+               }
+           })
+    },
+    editCategory(id){
+    this.$router.push({name: 'EditarCategory', params: { id: `${id}` }} )
+},
+newComuna(){
+    this.$router.push({name: 'NewCategory'});
+}
+},
+mounted() {
+    axios
+        .get('http://127.0.0.1:8000/api/categories')
+        .then(response => (this.categories = response.data.categories.data))
+},

@@ -20,6 +20,11 @@ const routes = [
     component: Categories
   },
   {
+    path: '/paymodes',
+    name: 'Paymodes',
+    component: Paymodes
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting

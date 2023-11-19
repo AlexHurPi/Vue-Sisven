@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Customers from '../views/Customers';
 import Categories from '../views/Categories';
+import Paymodes from '../views/Paymodes';
 
 const routes = [
   {

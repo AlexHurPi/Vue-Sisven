@@ -6,8 +6,7 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Name</th>
-            <th scope="col">Observation</th>                  
-            <th scope="col">Actions</th>
+            <th scope="col">Observation</th>           
         </tr>
     </thead>
     <tbody>       

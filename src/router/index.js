@@ -30,7 +30,7 @@ const routes = [
     component: EditarCategory
   },
   {
-    panth: '/add-category/:id',
+    panth: '/add-category/',
     name: 'NewCategory',
     component: NewCategory
   },

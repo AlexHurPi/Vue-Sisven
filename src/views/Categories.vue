@@ -1,6 +1,6 @@
 <template>
     <div class="container">    
-        <h1 class="text-start">Categories List
+        <h1 class="text-start">Categories List |
         <button @click="newCategory()"  
         class="btn btn-success mx-2">
         <font-awesome-icon icon="plus" />
@@ -11,7 +11,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Id</th>
-                <th scope="col">Name</th>
+                <th scope="col">Namec</th>
                 <th scope="col">Description</th>                        
             </tr>
         </thead>
@@ -19,14 +19,14 @@
             <tr v-for="(category,index) in categories" :key="index">
                 <th scope="row">{{ index + 1 }}</th>
                 <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
+                <td>{{ category.namec }}</td>
                 <td>{{ category.description }}</td>  
                 <td>                    
                <button @click="deleteCategory(category.id)"
                    class="btn btn-danger mx-2">
                    <font-awesome-icon icon="trash" />
                </button> 
-               <button @click="deleteCategory(category.id)"           
+               <button @click="editCategory(category.id)"           
                class="bnt bnt-warning mx-2">
                <font-awesome-icon icon="pencil" />
             </button> 
@@ -71,7 +71,7 @@ export default {
     editCategory(id){
     this.$router.push({name: 'EditarCategory', params: { id: `${id}` }} )
 },
-newComuna(){
+newCategory(){
     this.$router.push({name: 'NewCategory'});
 }
 },
@@ -80,3 +80,4 @@ mounted() {
         .get('http://127.0.0.1:8000/api/categories')
         .then(response => (this.categories = response.data.categories.data))
 },
+}

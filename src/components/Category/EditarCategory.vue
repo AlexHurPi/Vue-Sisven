@@ -83,7 +83,7 @@ export default {
 
 mounted() {
     this.category.id = this.$route.params.id;
-    axion.get(`http://127.0.0.1:8000/api/categories/${this.category.id}`)
+    axios.get(`http://127.0.0.1:8000/api/categories/${this.category.id}`)
         .then(response => {
             this.category = response.data.category;            
          })

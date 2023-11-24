@@ -111,8 +111,7 @@ export default {
                 birthday: '',
                 phone_number: '',
                 email: ''
-            },
-            
+            },            
         }
    },
    methods: {
@@ -138,7 +137,7 @@ export default {
 
 mounted() {
     this.customer.id = this.$route.params.id;
-    axion.get(`http://127.0.0.1:8000/api/customers/${this.customer.id}`)
+    axios.get(`http://127.0.0.1:8000/api/customers/${this.customer.id}`)
         .then(response => {
             this.customer = response.data.customer;            
          })

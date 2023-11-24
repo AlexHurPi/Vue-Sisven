@@ -49,7 +49,7 @@ export default {
         }
    },
    methods: {
-       deleteCategory(codigo){
+       deleteCategory(id){
            Swal.fire({
               title: `Do you want to delete the Category with id ${id}?`,
               showCancelButton: true,

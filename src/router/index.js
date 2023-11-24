@@ -65,6 +65,16 @@ const routes = [
     component: Products
   },
   {
+    panth: '/editar-product/:id',
+    name: 'EditarProduct',
+    component: EditarProduct
+  },
+  {
+    panth: '/add-product/',
+    name: 'NewProduct',
+    component: NewProduct
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting

@@ -3,9 +3,18 @@ import HomeView from '../views/HomeView.vue'
 
 import EditarCategory from ' ../components/categories/EditarCategory.vue';
 import NewCategory from ' ../components/categories/NewCategory.vue';
-import Customers from '../views/Customers';
 import Categories from '../views/Categories';
+
+import EditarCustomer from ' ../components/customers/EditarCustomer.vue';
+import NewCustomer from ' ../components/customers/NewCustomer.vue';
+import Customers from '../views/Customers';
+
+import EditarPaymode from ' ../components/paymodes/EditarPaymode.vue';
+import NewPaymode from ' ../components/paymodes/NewPaymode.vue';
 import Paymodes from '../views/Paymodes';
+
+import EditarProduct from ' ../components/products/EditarProduct.vue';
+import NewProduct from ' ../components/products/NewProduct.vue';
 import Products from '../views/Products';
 
 const routes = [

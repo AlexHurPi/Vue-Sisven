@@ -82,3 +82,4 @@ mounted() {
         .then(response => (this.categories = response.data.paymodes.data))
 },
 }
+</script>

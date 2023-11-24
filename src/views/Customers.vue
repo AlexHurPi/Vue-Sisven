@@ -92,3 +92,4 @@ mounted() {
         .then(response => (this.customers = response.data.customers.data))
 },
 }
+</script>

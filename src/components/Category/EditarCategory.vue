@@ -55,7 +55,7 @@ export default {
             category:{
                 id:0,
                 namec: '',
-                description: 0
+                description: ''
             },
             
         }

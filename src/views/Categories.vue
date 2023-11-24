@@ -1,11 +1,11 @@
 <template>
     <div class="container">    
-        <h1 class="text-start">Categories List |
+        <h1 class="text-start">Categories List |</h1>
         <button @click="newCategory()"  
         class="btn btn-success mx-2">
         <font-awesome-icon icon="plus" />
         </button>
-    </h1>
+    
         <table class="table">
         <thead>
             <tr>
@@ -22,23 +22,25 @@
                 <td>{{ category.namec }}</td>
                 <td>{{ category.description }}</td>  
                 <td>                    
-               <button @click="deleteCategory(category.id)"
-                   class="btn btn-danger mx-2">
-                   <font-awesome-icon icon="trash" />
-               </button> 
-               <button @click="editCategory(category.id)"           
-               class="bnt bnt-warning mx-2">
-               <font-awesome-icon icon="pencil" />
-            </button> 
-            </td>                                         
+                    <button @click="deleteCategory(category.id)"
+                        class="btn btn-danger mx-2">
+                        <font-awesome-icon icon="trash" />
+                    </button> 
+                    <button @click="editCategory(category.id)"           
+                        class="bnt bnt-warning mx-2">
+                        <font-awesome-icon icon="pencil" />
+                    </button> 
+                </td>                                         
             </tr>       
         </tbody>
         </table>
         </div>   
     </template>
+
 <script>
     import axios from 'axios'
     import Swal from 'sweetalert2'
+
 
 export default {
 
@@ -81,3 +83,4 @@ mounted() {
         .then(response => (this.categories = response.data.categories.data))
 },
 }
+</script>

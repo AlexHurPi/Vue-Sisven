@@ -1,20 +1,20 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-import EditarCategory from ' ../components/categories/EditarCategory.vue';
-import NewCategory from ' ../components/categories/NewCategory.vue';
+import EditarCategory from '../components/Category/EditarCategory.vue';
+import NewCategory from '../components/Category/NewCategory.vue';
 import Categories from '../views/Categories';
 
-import EditarCustomer from ' ../components/customers/EditarCustomer.vue';
-import NewCustomer from ' ../components/customers/NewCustomer.vue';
+import EditarCustomer from '../components/Customer/EditarCustomer.vue';
+import NewCustomer from '../components/Customer/NewCustomer.vue';
 import Customers from '../views/Customers';
 
-import EditarPaymode from ' ../components/paymodes/EditarPaymode.vue';
-import NewPaymode from ' ../components/paymodes/NewPaymode.vue';
+import EditarPaymode from '../components/Paymode/EditarPaymode.vue';
+import NewPaymode from '../components/Paymode/NewPaymode.vue';
 import Paymodes from '../views/Paymodes';
 
-import EditarProduct from ' ../components/products/EditarProduct.vue';
-import NewProduct from ' ../components/products/NewProduct.vue';
+import EditarProduct from '../components/Product/EditarProduct.vue';
+import NewProduct from '../components/Product/NewProduct.vue';
 import Products from '../views/Products';
 
 const routes = [

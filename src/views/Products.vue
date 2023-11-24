@@ -86,3 +86,4 @@ mounted() {
         .then(response => (this.products = response.data.products.data))
 },
 }
+</script>

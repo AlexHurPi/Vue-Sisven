@@ -4,7 +4,7 @@
        <div class="card">
            <div class="card-header fw-bold">Customer</div>
       <div class="card-body">
-          <form @submit.prevent="updateCategory">
+          <form @submit.prevent="updateCustomer">
         
               <div class="row mb-3">
                 

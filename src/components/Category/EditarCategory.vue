@@ -1,6 +1,6 @@
 <template>
     <div class="container text-start">
-       <h1 class="text-primary fw-bold"> Editar</h1>
+       <h1 class="text-primary fw-bold"> Edit</h1>
        <div class="card">
            <div class="card-header fw-bold">Category</div>
       <div class="card-body">
@@ -8,7 +8,7 @@
         
               <div class="row mb-3">
                 
-                <label for="comu_codi" class="form-label">Id</label>
+                <label for="id" class="form-label">Id</label>
                 
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="tag" /></div>

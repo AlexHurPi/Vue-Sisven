@@ -20,6 +20,16 @@ const routes = [
     component: Customers
   },
   {
+    panth: '/editar-customer/:id',
+    name: 'EditarCustomer',
+    component: EditarCustomer
+  },
+  {
+    panth: '/add-customer/',
+    name: 'NewCustomer',
+    component: NewCustomer
+  },
+  {
     path: '/categories',
     name: 'Categories',
     component: Categories

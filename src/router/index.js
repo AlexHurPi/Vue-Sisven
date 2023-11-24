@@ -50,6 +50,16 @@ const routes = [
     component: Paymodes
   },
   {
+    panth: '/editar-paymode/:id',
+    name: 'EditarPaymode',
+    component: EditarPaymode
+  },
+  {
+    panth: '/add-paymode/',
+    name: 'NewPaymode',
+    component: NewPaymode
+  },
+  {
     path: '/products',
     name: 'Products',
     component: Products

@@ -1,10 +1,10 @@
 <template>
     <div class="container text-start">
-       <h1 class="text-primary fw-bold"> Edit</h1>
+       <h1 class="text-primary fw-bold"> New</h1>
        <div class="card">
            <div class="card-header fw-bold">Product</div>
       <div class="card-body">
-          <form @submit.prevent="updateProduct">
+          <form @submit.prevent="saveProduct">
         
               <div class="row mb-3">
                 
@@ -51,12 +51,13 @@
                 <label for="category_id" class="form-label">Category : </label>
                 <div class="input-group">
                     <div class="input-group-text"> <font-awesome-icon icon="bank" /></div>
-                        <select class="form-select" v-model="product.category_id">
+                        <select class="form-select" v-model="category_id">
+                            <option selected value="0">Choose category</option>
                             <option v-for="category in categories" v-bind:value="category.id">{{ category.namec }}</option>
                         </select>
                 </div>                
             </div>
-     <button class="btn btn-primary" type="submit">Actualizar</button>
+     <button class="btn btn-primary" type="submit">Save</button>
      <button class="btn btn-secondary mx-2" @click="cancelar">Cancelar</button>
     </form>
   </div>
@@ -68,7 +69,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 export default {
-    name: 'EditarProduct',
+    name: 'NewProduct',
     data(){
         return{
             product:{
@@ -78,16 +79,18 @@ export default {
                 stock: '',
                 category_id: ''                
             },   
-            categories: []         
+            categories: [],
+            category_id: "0"         
         }
    },
    methods: {
-   cancelar(){
+   cancel(){
       this.$router.push({name: 'Products'})
    },
    
-   async updateProduct(){
-       const res = await axios.put(`http://127.0.0.1:8000/api/products/${this.product.id}`, this.product)
+   async saveProduct(){
+    this.product.category_id = this.category_id
+       const res = await axios.post(`http://127.0.0.1:8000/api/products/`, this.product)
 
        if (res.status == 200){
            this.$router.push({name: 'Products'})
@@ -102,11 +105,9 @@ export default {
    }
 },
 
-mounted() {
-    this.product.id = this.$route.params.id;
-    axios.get(`http://127.0.0.1:8000/api/products/${this.product.id}`)
+mounted() {    
+    axios.get(`http://127.0.0.1:8000/api/categories/`)
         .then(response => {
-            this.product = response.data.product;  
             this.categories = response.data.categories           
          })
     },
